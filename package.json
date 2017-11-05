@@ -1,0 +1,31 @@
+{
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hendrix04/node-passthrough.git"
+  },
+  "name": "node-passthrough",
+  "version": "1.0.0",
+  "description": "This is a passthrough",
+  "scripts": {
+    "lint": "npm-kit lint",
+    "validate": "npm-kit validate",
+    "prepublish": "npm-kit validate --quiet",
+    "start": "node ./bin/www",
+    "dev":  "nodemon ./bin/www",
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-plugin-import": "^2.2.0",
+    "jest": "^20.0.1",
+    "nodemon": "^1.12.0",
+    "supertest": "^3.0.0"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "request-promise-native": "^1.0.5"
+  }
+}

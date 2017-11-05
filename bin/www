@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+'use strict'
+// Built ins
+const http = require('http');
+
+function errorHandler(error) {
+  switch(error.code) {
+    case 'EACCES':
+    case 'EADDRINUSE':
+      process.exit(error.errno);
+      break;
+    default:
+      throw error;
+  }
+}
+
+require('../app')
+  .init()
+  .then((app) => {
+    let port = 8081;
+    app.set('port', port);
+
+    let server = http.createServer(app);
+
+    server.on('error', errorHandler);
+    server.on('listening', () => {
+      console.log(`Server listening on ${port}`);
+    });
+
+    server.listen(port);
+    });
