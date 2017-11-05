@@ -26,6 +26,7 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "request-promise-native": "^1.0.5"
+    "request-promise-native": "^1.0.5",
+    "node-storage": "^0.0.7"
   }
 }
